@@ -11,8 +11,8 @@ class Cashier:
     def process_coins(self):
         """Returns total money inserted."""
         print("Please insert coins.")
-
         total = 0
+
         for coin in self.COIN_VALUES:
             count = int(input(f"How many {coin}? "))
             total += count * self.COIN_VALUES[coin]
@@ -20,7 +20,7 @@ class Cashier:
         return round(total, 2)
 
     def transaction_result(self, money_received, drink_cost):
-        """Return True if payment is accepted, False if insufficient."""
+        """Return True if payment accepted, False if not."""
         if money_received < drink_cost:
             print("Sorry, that's not enough money. Money refunded.")
             return False
@@ -31,3 +31,4 @@ class Cashier:
 
         print("Payment successful.")
         return True
+
